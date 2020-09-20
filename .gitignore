@@ -1,5 +1,6 @@
 /target
 /.idea
+Cargo.lock
 *.no
 /src/tutorial_stuff.rs
 /shaders/fractal.glsl
