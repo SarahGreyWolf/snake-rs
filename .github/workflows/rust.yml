@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build
-      run: cargo build --verbose
+      run: cargo build --release --verbose
     - name: Run tests
       run: cargo test --verbose
     - uses: actions/upload-artifact@v2
@@ -28,12 +28,11 @@ jobs:
   build-windows:
 
     runs-on: windows-latest
-    
 
     steps:
+    - uses: actions/checkout@v2
     - name: Install ninja-build tool
       uses: seanmiddleditch/gha-setup-ninja@v2
-    - uses: actions/checkout@v2
     - name: Build
       run: cargo build --release --verbose
     - name: Run tests
@@ -50,7 +49,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build
-      run: cargo build --verbose
+      run: cargo build --release --verbose
     - name: Run tests
       run: cargo test --verbose
     - uses: actions/upload-artifact@v2
