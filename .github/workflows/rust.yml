@@ -30,7 +30,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: snake-linux
-        path: target/release
+        path: target/release/snake
       
   build-windows:
 
@@ -62,13 +62,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Cache
-      uses: actions/cache@v2.1.1
-      with:
-        # A list of files, directories, and wildcard patterns to cache and restore
-        path: target/
-        # An explicit key for restoring and saving the cache
-        key: lopping
     - name: Build
       run: cargo build --release --verbose
     - name: Run tests
