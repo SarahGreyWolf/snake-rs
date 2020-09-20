@@ -16,6 +16,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Cache
+      uses: actions/cache@v2.1.1
+      with:
+        # A list of files, directories, and wildcard patterns to cache and restore
+        path: target/
+        # An explicit key for restoring and saving the cache
+        key: lemming
     - name: Build
       run: cargo build --release --verbose
     - name: Run tests
@@ -31,6 +38,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Cache
+      uses: actions/cache@v2.1.1
+      with:
+        # A list of files, directories, and wildcard patterns to cache and restore
+        path: target/
+        # An explicit key for restoring and saving the cache
+        key: lumming
     - name: Install ninja-build tool
       uses: seanmiddleditch/gha-setup-ninja@v2
     - name: Build
@@ -48,6 +62,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Cache
+      uses: actions/cache@v2.1.1
+      with:
+        # A list of files, directories, and wildcard patterns to cache and restore
+        path: target/
+        # An explicit key for restoring and saving the cache
+        key: lopping
     - name: Build
       run: cargo build --release --verbose
     - name: Run tests
