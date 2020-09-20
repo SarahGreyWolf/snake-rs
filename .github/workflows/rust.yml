@@ -20,21 +20,28 @@ jobs:
       run: cargo build --verbose
     - name: Run tests
       run: cargo test --verbose
+    - uses: actions/upload-artifact@v2
+      with:
+        name: snake-linux
+        path: target/release/snake*
       
   build-windows:
 
     runs-on: windows-latest
+    
 
     steps:
-    - uses: ashutoshvarma/setup-ninja@v1
-      with:
-        # Ninja version. Make sure given ninja version exists in ninja github release
-        version: 1.10.1 # default is 1.10.0
+    - name: Install ninja-build tool
+      uses: seanmiddleditch/gha-setup-ninja@v2
     - uses: actions/checkout@v2
     - name: Build
-      run: cargo build --verbose
+      run: cargo build --release --verbose
     - name: Run tests
       run: cargo test --verbose
+    - uses: actions/upload-artifact@v2
+      with:
+        name: snake-win
+        path: target/release/snake.exe
       
   build-mac:
 
@@ -46,3 +53,7 @@ jobs:
       run: cargo build --verbose
     - name: Run tests
       run: cargo test --verbose
+    - uses: actions/upload-artifact@v2
+      with:
+        name: snake-mac
+        path: target/release/snake*
