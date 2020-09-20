@@ -69,4 +69,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: snake-mac
-        path: target/release
+        path: target/release/snake
