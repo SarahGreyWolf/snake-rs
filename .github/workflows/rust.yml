@@ -46,7 +46,7 @@ jobs:
         # An explicit key for restoring and saving the cache
         key: lumming
     - name: Install ninja-build tool
-      uses: seanmiddleditch/gha-setup-ninja@v2
+      uses: seanmiddleditch/gha-setup-ninja@v3
     - name: Build
       run: cargo build --release --verbose
     - name: Run tests
