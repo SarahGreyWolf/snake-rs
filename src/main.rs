@@ -450,14 +450,14 @@ impl App {
                 head_pos[1] = (i_head_pos[1] + facing.get_addition()[1]) as u8;
                 if head_pos[0] > grid_size[0] - 1 {
                     head_pos[0] = 1;
-                } else if head_pos[0] < 1 {
+                } else {
                     head_pos[0] = grid_size[0] - 1;
-                } else {}
+                }
                 if head_pos[1] > grid_size[1] - 1 {
                     head_pos[1] = 1;
-                } else if head_pos[1] < 1 {
+                } else {
                     head_pos[1] = grid_size[1]- 1;
-                }else {}
+                }
                 if head_pos != previous_head_pos {
                     let previous_body = &body.clone();
                     for i in (0..body.len()).rev() {
